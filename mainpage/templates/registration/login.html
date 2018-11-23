@@ -1,0 +1,45 @@
+{%extends 'home.html'%}
+{% block body%}
+{% load widget_tweaks %}
+<div class="columns is-centered">
+    <div class="column is-half has-text-centered">
+
+        <div class="card">
+            <header class="card-header">
+              <p class="card-header-title">
+                Log In
+              </p>
+              <a  class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                  <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                </span>
+              </a>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                  <form method="post" action="{% url 'login' %}">
+                      {% csrf_token %}
+                      <table>
+                      
+                      <tr>
+                        <td>{{ form.username.label_tag }}</td>
+                        <td>{%render_field form.username class="input" placeholder=form.username.name%}</td>
+                      </tr>
+                      
+                      <tr>
+                        <td>{{ form.password.label_tag }}</td>
+                        <td>{%render_field form.password class="input" placeholder=form.password.name%}</td>
+                      </tr>
+                      </table>
+                     
+                          <input class="button is-primary" type="submit" value="Log In">
+                     
+                      </form>
+              </div>
+            </div>
+            
+          </div>
+
+    </div>
+    </div>
+    {%endblock%}

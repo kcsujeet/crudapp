@@ -1,0 +1,42 @@
+{% extends 'home.html'%}
+{% load widget_tweaks %}
+{% block body%}
+<div class="columns is-centered">
+        <div class="column is-half has-text-centered">
+    
+            <div class="card">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    Sign Up
+                  </p>
+                  <a  class="card-header-icon" aria-label="more options">
+                    <span class="icon">
+                      <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    </span>
+                  </a>
+                </header>
+                <div class="card-content">
+                  <div class="content">
+                        <form method="post">
+                                {% csrf_token %}
+                                <table>
+                                        {%for field in form%}
+                                        <tr>
+                                          <td>{{ field.label_tag }}</td>
+                                          <td>{%render_field field class="input" placeholder=field.name%}</td>
+                                        </tr>
+                                        {%endfor%}
+                                        </table>
+                                       
+                                            <input class="button is-primary" type="submit" value="Sign Up">
+                                       
+                              </form>
+                  </div>
+                </div>
+                
+              </div>
+    
+        </div>
+        </div>
+  
+{% endblock%}
