@@ -5,4 +5,4 @@ I used Bulma in this project because i wanted to tryout new css framework. I fou
 I plan to integrate vuejs in this project just for learning purpose. I want to see how much better can i do with vue and django.
 .
 .
-Feel free to download and run this project. Keep in mind that this project is MySQL based not the default SQLite.
+Feel free to download and run this project. Keep in mind that this project is in MySQL not the default SQLite.
